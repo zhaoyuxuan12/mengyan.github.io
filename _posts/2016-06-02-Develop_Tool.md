@@ -1,3 +1,9 @@
+---
+layout: post
+title: Git 命令
+tag: 博客
+---
+
 # git hub
 [TOC]
 ## 安装git
