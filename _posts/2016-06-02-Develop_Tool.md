@@ -1,45 +1,50 @@
----
-layout: post
-title: 开发常用工具
-date: 2016-06-02 11:15:06 
-tag: 工具
----
+# git hub
+[TOC]
+## 安装git
 
-工欲善其事必先利其器，选择一些好的工具可以成吨的提高自己的工作效率。
+1.sudo apt-get install git 安装git
+2.git config --global user.name " " 创建名
+3.git config --global user.name " " 创建邮箱
 
-### 个人开发常用工具的收集
- 
-* [cmd Markdown](https://www.zybuluo.com/mdeditor) 作业部落出版的Markdown编辑器       
-* [RESTClient](https://github.com/rest-client/rest-client) 一个开源的客户端HTTP调试工具。    
-* [lantern](https://github.com/getlantern/lantern) 蓝灯,一款开源的翻墙工具。    
-* [Charles](https://www.charlesproxy.com/) 青花瓷, 一款HTTP/HTTPS的抓包工具。
-	* [Charles 从入门到精通](http://blog.devtang.com/2015/11/14/charles-introduction/)  
-* [Sublime](http://www.sublimetext.com) 一款强大的IDE,支持Python、JS、JSON格式化等等...更重要的是`Sublime`支持的插件很多。  
-	* [实用的sublime插件集合](http://www.xuanfengge.com/practical-collection-of-sublime-plug-in.html)     
+## 创建版本库
 
-### 文章配图网站
+1. 创建路径
+	- mkdir learngit 创建路径
+	- cd learngit 进入路径
+	- pwd 显示当前目录
 
-还在为文章配图而苦恼吗？点击店面的网站吧，各种各样的图片帮你丰富你的文章。
+2. 管理仓库
+	- git init 把目录变成管理仓库 初始化仓库
+	- 创建一个readme.txt文件
+	- git add readme.txt 把文件添加到仓库
+	- git commit -m "wrote a readme file" 把文件提交到仓库
+	- 也可以提交多个文件
+		- git add file1.txt
+		- git add file2.txt
+		- git commit -m "add 3 files." 
 
-[Gratisography](http://www.gratisography.com/) gratisography 里面的图片每周都会更新，很多时尚流行的照片在里面，并且适合用在设计项目上。
+## 时光穿梭
 
-[ssyer](http://www.ssyer.com/home-index.html)国内的网站，不需要翻墙，速度很快，图片最全。完全免费的图片库。
+1. 修改提交
+	- 修改readme.txt文件
+	1. git status 查看结果
+	2. git diff 查看修改的内容
+	3. git add readme.txt 把文件添加到仓库
+	4. git commit -m "add distributed" 把文件提交到仓库
+	5. git status 查看当前状态
 
-[Pixabay](https://pixabay.com/) 不同类型的高清摄影照片。
+2. 版本退回
+	1. git log 查看历史文档版本
+	- git log --pretty=oneline 缩短查询的历史版本 视觉上简化
+	2. git reset --hard HEAD^ 退回上一个历史版本 HEAD代表本版本 HEAD^上一个版本 HEAD^^ 代表上一个版本 HEAD~100 第100个版本
+	3. git rest --hard 1094a 退回id是1094a……的版本
+	4. git reflog 记录你的每一次命令
 
+3. 工作区和暂存区
+	1. git add 是将文件存到暂存区。
+	2. git commit -m 是将文件提交到分支进行保存
 
-### UI设计网站
-
-作为一个开发者，自己写些小程序的时候经常会为没有UI而烦恼，下面就是一些UI设计网站，有新颖的UI界面设计，也有单独的UI元素，icon等。
-
-[UI中国](http://www.ui.cn/) 国内潮流的UI设计作品。
-
-[webdesigndev](http://www.webdesigndev.com/) 国外网站设计文章，各种各样的资料看到你眼花缭乱。
-
-[dribbble](https://dribbble.com/) 接触过设计的应该都知道，一个很好的UI设计平台。
-
-[flaticon](http://www.flaticon.com/) 各种icon的设计，一定有你想想要的。
-
-<br>
-
-转载请注明：[潘柏信的博客](http://baixin) » [点击阅读原文](http://baixin.io/2016/06/Develop_Tool/)
+4. 管理修改
+	1. 在工作区修改1.txt然后git add 添加后在修改1.txt 后git commit -m 提交后提交的是第一次修改文件。 第二次的并没有提交 需要再次提交。
+	2. cat 文件 可以查看文档内容
+	3. git diff HEAD -- 文件名和后缀名 可以查看工作区的和版本库里面最新版本的区别文本爱暂存的时候用
