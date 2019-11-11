@@ -4,7 +4,7 @@ title: Git 命令
 tag: 博客
 ---
 
-# git hub
+# Github
 [TOC]
 ## 安装git
 
